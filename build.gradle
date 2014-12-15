@@ -1,7 +1,15 @@
 apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
 
-sourceCompatibility = 1.5
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
 version = '1.0'
+
+group = 'jdk'
+sourceSets.main.resources.srcDir 'src/main/java'
 
 repositories {
     mavenCentral()
@@ -9,4 +17,14 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'jdk.nashorn.tools.Shell'
+    }
+
+    from("${projectDir}/src") {
+        include('*.*')
+    }
 }
