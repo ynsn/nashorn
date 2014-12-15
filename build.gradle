@@ -28,3 +28,7 @@ jar {
         include('*.*')
     }
 }
+
+processResources {
+    from 'LICENSE'
+}
