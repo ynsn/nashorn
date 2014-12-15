@@ -9,3 +9,5 @@ This repository is a fork of Oracles Nashorn engine (specifies EcmaScript 5.1 / 
 
     $ sh gradlew               # *nix
     $ gradlew.bat              # Windows
+
+A Maven repository is coming...
